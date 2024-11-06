@@ -1,46 +1,69 @@
 <script>
 // Function to get the current setup from the global YM_SPLIT_TESTS object
 function getCurrentSetup() {
-    // Check if YM_SPLIT_TESTS and selectedVariant are defined
     if (window.YM_SPLIT_TESTS && window.YM_SPLIT_TESTS.selectedVariant) {
         return window.YM_SPLIT_TESTS.selectedVariant; // Return the selected variant
     } else {
-        return "No variant assigned";  // Fallback in case no variant is assigned
+        return "SN_splt: No variant assigned"; // Fallback in case no variant is assigned
     }
 }
 
-// Example usage:
-const currentSetup = getCurrentSetup();
-console.log("The lazy loading setup is: ", currentSetup);
+// Ensure setup is initialized before running dependent code
+function ensureSetupInitialized(callback, retries = 100) {
+    if (window.YM_SPLIT_TESTS && window.YM_SPLIT_TESTS.selectedVariant && mappedDomain) {
+        callback();
+    } else if (retries > 0) {
+        setTimeout(function () {
+            ensureSetupInitialized(callback, retries - 1); // Decrement retries
+        }, 50);
+    } else {
+        console.error("SN_split: Failed to initialize after multiple attempts.");
+    }
+}
 
-//ready googleTag used for gpt
-window.googletag = window.googletag || {cmd: []};
 
-// You can use currentSetup to conditionally load or execute setup-specific code
-if (currentSetup === 'setup1') {
+// Example of usage with ensureSetupInitialized
+ensureSetupInitialized(function () {
+    const currentSetup = getCurrentSetup();
+    console.log("SN_splt: The lazy loading setup is:", currentSetup);
+
+    // Use currentSetup to conditionally load or execute setup-specific code
+    window.googletag = window.googletag || {cmd: []}; // Ready googletag for GPT commands
+
+    if (currentSetup === 'setup1') {
         googletag.cmd.push(function(){
-        googletag.pubads().setTargeting('split_version', 'control');
-    });
-    console.log('Lazy loading margin: Control value');
-} else if (currentSetup === 'setup2') {
+            googletag.pubads().setTargeting('split_version', 'control');
+        });
+        console.log('SN_split: Lazy loading margin: Control value');
+    } else if (currentSetup === 'setup2') {
         googletag.cmd.push(function(){
-        googletag.pubads().setTargeting('split_version', '10');
-    });
-    console.log('Lazy loading margin: margin 10');
-} else if (currentSetup === 'setup3') {
+            googletag.pubads().setTargeting('split_version', '10');
+        });
+        console.log('SN_split: Lazy loading margin: margin 10');
+    } else if (currentSetup === 'setup3') {
         googletag.cmd.push(function(){
-        googletag.pubads().setTargeting('split_version', '20');
-    });
-    console.log('Lazy loading margin: marign 20');
-} else if (currentSetup === 'setup4') {
+            googletag.pubads().setTargeting('split_version', '20');
+        });
+        console.log('SN_split: Lazy loading margin: margin 20');
+    } else if (currentSetup === 'setup4') {
         googletag.cmd.push(function(){
-        googletag.pubads().setTargeting('split_version', '30');
-    });
-    console.log('Lazy loading margin: margin 30');
-} else if (currentSetup === 'setup5') {
+            googletag.pubads().setTargeting('split_version', '30');
+        });
+        console.log('SN_split: Lazy loading margin: margin 30');
+    } else if (currentSetup === 'setup5') {
         googletag.cmd.push(function(){
-        googletag.pubads().setTargeting('split_version', '40');
-    });
-    console.log('Lazy loading margin: margin 40');
-} 
+            googletag.pubads().setTargeting('split_version', '40');
+        });
+        console.log('SN_split: Lazy loading margin: margin 40');
+    } else {
+        console.log("SN_split: No specific lazy loading setup found for this variant.");
+    }
+
+    // Additional logic based on mappedDomain if needed
+    var config = getLazyLoadMapping(mappedDomain);
+    var fetch = config.fetch;
+    var render = config.render;
+    console.log("SN_split: Fetch:", fetch, "SN_split: Render:", render);
+});
+
 </script>
