@@ -72,6 +72,10 @@ function () {
                 "fetch": 200,
                 "render": 175
             },
+            "horsensidag.dk": {
+                "fetch": 200,
+                "render": 175
+            },
             "byggelandet.dk": {
                 "fetch": 200,
                 "render": 175    
@@ -84,11 +88,15 @@ function () {
                 "fetch": 200,
                 "render": 175
             },
-            "raavareguiden.dk": {
+            "sport.dk": {
                 "fetch": 200,
                 "render": 175
             },
-            "familiekogebogen.dk": {
+            "bifsupporters.dk": {
+                "fetch": 200,
+                "render": 175
+            },
+            "barcafans.dk": {
                 "fetch": 200,
                 "render": 175
             },
@@ -165,6 +173,10 @@ function () {
                 "fetch": 200,
                 "render": 185
             },
+            "horsensidag.dk": {
+                "fetch": 200,
+                "render": 185
+            },
             "byggelandet.dk": {
                 "fetch": 200,
                 "render": 185
@@ -177,13 +189,17 @@ function () {
                 "fetch": 200,
                 "render": 185
             },
-            "raavareguiden.dk": {
+            "sport.dk": {
                 "fetch": 200,
                 "render": 185
             },
-            "familiekogebogen.dk": {
+            "bifsupporters.dk": {
                 "fetch": 200,
-                "render": 185
+                "render": 175
+            },
+            "barcafans.dk": {
+                "fetch": 200,
+                "render": 175
             },
       },
       
@@ -258,6 +274,10 @@ function () {
                 "fetch": 200,
                 "render": 195
             },
+            "horsensidag.dk": {
+                "fetch": 200,
+                "render": 195
+            },
             "byggelandet.dk": {
                 "fetch": 200,
                 "render": 195
@@ -270,11 +290,15 @@ function () {
                 "fetch": 200,
                 "render": 195
             },
-            "raavareguiden.dk": {
+            "sport.dk": {
                 "fetch": 200,
                 "render": 195
             },
-            "familiekogebogen.dk": {
+            "bifsupporters.dk": {
+                "fetch": 200,
+                "render": 195
+            },
+            "barcafans.dk": {
                 "fetch": 200,
                 "render": 195
             },
@@ -351,6 +375,10 @@ function () {
                 "fetch": 200,
                 "render": 200
             },
+            "horsensidag.dk": {
+                "fetch": 200,
+                "render": 200
+            },
             "byggelandet.dk": {
                 "fetch": 200,
                 "render": 200
@@ -363,11 +391,15 @@ function () {
                 "fetch": 200,
                 "render": 200
             },
-            "raavareguiden.dk": {
+            "sport.dk": {
                 "fetch": 200,
                 "render": 200
             },
-            "familiekogebogen.dk": {
+            "bifsupporters.dk": {
+                "fetch": 200,
+                "render": 200
+            },
+            "barcafans.dk": {
                 "fetch": 200,
                 "render": 200
             },
@@ -444,6 +476,10 @@ function () {
                 "fetch": 200,
                 "render": 200
             },
+            "horsensidag.dk": {
+                "fetch": 200,
+                "render": 200
+            },
             "byggelandet.dk": {
                 "fetch": 200,
                 "render": 200
@@ -456,11 +492,15 @@ function () {
                 "fetch": 200,
                 "render": 200
             },
-            "raavareguiden.dk": {
+            "sport.dk": {
                 "fetch": 200,
                 "render": 200
             },
-            "familiekogebogen.dk": {
+            "bifsupporters.dk": {
+                "fetch": 200,
+                "render": 200
+            },
+            "barcafans.dk": {
                 "fetch": 200,
                 "render": 200
             },
