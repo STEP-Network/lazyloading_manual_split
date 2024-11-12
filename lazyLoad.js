@@ -507,27 +507,28 @@ function () {
       },
     };
     
-    // Function to get the lazy load mapping based on the selected setup
-    function getLazyLoadMapping(mappedDomain) {
-      // Get the currently selected setup from the global variable
-      var currentSetup =
-        window.YM_SPLIT_TESTS && window.YM_SPLIT_TESTS.selectedVariant;
-    
-      // Select the correct mapping based on the setup
-      var lazyLoadMapping =
-        lazyLoadMappings[currentSetup] || lazyLoadMappings["setup1"]; // Default to setup1
-    
-      // Return the configuration for the specified domain, or the first entry if not found
-      return (
-        lazyLoadMapping[mappedDomain] ||
-        lazyLoadMapping[Object.keys(lazyLoadMapping)[0]]
-      );
-    }
-    
-    var mappedDomain = "{{ mappedDomain }}"; // You can dynamically set this value
-    var config = getLazyLoadMapping(mappedDomain);
-    var fetch = config["fetch"];
-    var render = config["render"];
-    return {fetch, render};
-    
-    }
+
+// Function to get the lazy load mapping based on the selected setup
+function getLazyLoadMapping(mappedDomain) {
+    // Get the currently selected setup from the global variable
+    var currentSetup =
+      window.YM_SPLIT_TESTS && window.YM_SPLIT_TESTS.selectedVariant;
+  
+    // Select the correct mapping based on the setup
+    var lazyLoadMapping =
+      lazyLoadMappings[currentSetup] || lazyLoadMappings["setup1"]; // Default to setup1
+  
+    // Return the configuration for the specified domain, or the first entry if not found
+    return (
+      lazyLoadMapping[mappedDomain] ||
+      lazyLoadMapping[Object.keys(lazyLoadMapping)[0]]
+    );
+  }
+  
+  var mappedDomain = "{{ mappedDomain }}"; // You can dynamically set this value
+  var config = getLazyLoadMapping(mappedDomain);
+  var fetch = config["fetch"];
+  var render = config["render"];
+  return {fetch, render};
+
+  }
