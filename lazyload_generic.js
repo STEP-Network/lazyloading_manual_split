@@ -45,10 +45,6 @@ function() {
             "fetch": 200,
             "render": 125
         },
-        "nytsite.hardwareonline.dk": {
-            "fetch": 200,
-            "render": 125
-        },
         "biltesteren.dk": {
             "fetch": 220,
             "render": 170
@@ -92,8 +88,8 @@ function() {
             "render": 175
         },
         "sport.dk": {
-            "fetch": 200,
-            "render": 175
+            "fetch": 300,
+            "render": 250
         },
         "bifsupporters.dk": {
             "fetch": 200,
